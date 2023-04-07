@@ -56,4 +56,5 @@ total 8
 
 ### 3、升级 Java 版本
 https://www.oracle.com/technetwork/java/javase/8u161-relnotes-4021379.html
+
 就是从`1.8.0_161-b12`版本后，默认将采用无限制的加密算法，也就是使用`unlimited`下的jar包。我们也可以通过设置`java.security`文件的`crypto.policy`的值来改变这个默认的值。
