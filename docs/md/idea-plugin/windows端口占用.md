@@ -9,8 +9,8 @@
 输入命令：
 
 ```netstat -ano ```
-该命令列出所有端口的使用情况。
 
+该命令列出所有端口的使用情况。
 在列表中我们观察被占用的端口，比如是 1224，首先找到它。
 ![](https://user-images.githubusercontent.com/130021276/230584931-7f773af9-b43a-4f07-8cf3-e66bc686c441.png)
 
@@ -18,6 +18,7 @@
 输入命令：
 
 ```netstat -aon|findstr "8081" ```
+
 回车执行该命令，最后一位数字就是 PID, 这里是 9088。
 ![](https://user-images.githubusercontent.com/130021276/230585030-4f6f1188-7588-4a1c-afae-69f61b39d59c.png)
 
@@ -25,6 +26,7 @@
 继续输入命令：
 
 ```tasklist|findstr "9088" ```
+
 回车执行该命令。
 查看是哪个进程或者程序占用了 8081 端口，结果是：node.exe。
 ![](https://user-images.githubusercontent.com/130021276/230585075-c897523c-d5a3-4fb9-b2c3-50652c59b36e.png)
@@ -33,6 +35,7 @@
 强制（/F参数）杀死 pid 为 9088 的所有进程包括子进程（/T参数）：
 
 ```taskkill /T /F /PID 9088 ```
+
 或者是我们打开任务管理器，切换到进程选项卡，在PID一列查看9088对应的进程是谁，如果看不到PID这一列,如下图：
 ![](https://user-images.githubusercontent.com/130021276/230585227-dd98ca86-af31-4fd5-8981-b8b06e370d84.png)
 
