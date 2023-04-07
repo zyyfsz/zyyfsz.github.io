@@ -1,5 +1,5 @@
 - [:octocat: **首页**](/README)
 - :memo: 目录
    - [在线格式化工具](/md/idea-plugin/在线格式化工具.md)
-   - [邮件发送](/md/idea-plugin/邮件发送.md)
+   - [Java发送邮件](/md/idea-plugin/邮件发送.md)
    - [windows端口占用](/md/idea-plugin/windows端口占用.md)
