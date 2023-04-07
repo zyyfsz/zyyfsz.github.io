@@ -23,6 +23,7 @@ total 8
 -rw-r--r-- 1 root root 2917 Jul  4 19:41 US_export_policy.jar
 ```
 有一个`limited`目录(也就是对解密有限制的包，只支持 128位)，也有一个`ulimited`目录(也就是没有限制的目录)。
+
 ### 1、更改源码
 我们在`/usr/local/java/jdk1.8.0_151/jre/lib/security/`下的`java.security`文件中看到。
 
@@ -48,4 +49,11 @@ total 8
 注意下文中的`(equivalent to crypto.policy=limited)`说明默认是使用的`limited`.
 我们只需要加`crypto.policy=unlimited`. 让默认使用的不限制的。
 
+### 2、替换Jar包
+**替换`/usr/local/java/jdk1.8.0_151/jre/lib/security/policy/limited`的路径的包。**
+我们可以直接用`/usr/local/java/jdk1.8.0_151/jre/lib/security/policy/unlimited`下面的包
+直接替换`/usr/local/java/jdk1.8.0_151/jre/lib/security/policy/limited/`下面的两个包,也就是让默认使用不限制的jar包。
 
+### 3、升级 Java 版本
+https://www.oracle.com/technetwork/java/javase/8u161-relnotes-4021379.html
+就是从`1.8.0_161-b12`版本后，默认将采用无限制的加密算法，也就是使用`unlimited`下的jar包。我们也可以通过设置`java.security`文件的`crypto.policy`的值来改变这个默认的值。
